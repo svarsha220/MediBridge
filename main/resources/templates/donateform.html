@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Donate Organ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            text-align: center;
+            padding: 40px;
+        }
+        h2 {
+            color: #333;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        label {
+            font-size: 16px;
+            display: block;
+            margin-bottom: 8px;
+        }
+        input {
+            padding: 8px;
+            font-size: 16px;
+            width: 100%;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 12px 24px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<h2>Donate Organ</h2>
+<div class="form-container">
+    <form id="donateform" th:action="@{/donateorgan}" method="post" th:object="${donation}">
+        <label for="organName">Organ Name:</label>
+        <input type="text" th:field="*{organName}" required><br>
+
+        <label for="donorName">Donor Name:</label>
+        <input type="text" th:field="*{donorName}" required><br>
+
+        <label for="bloodGroup">Blood Group:</label>
+        <input type="text" th:field="*{bloodGroup}" required><br>
+
+        <label for="donorAge">Donor Age:</label>
+        <input type="number" th:field="*{donorAge}" required><br>
+
+        <!-- User ID will be set from session -->
+        <input type="hidden" th:field="*{userId}" th:value="${currentUser}">
+
+        <button type="submit">Submit Donation</button>
+    </form>
+</div>
+
+<p id="message" th:text="${message}"></p>
+
+</body>
+</html>

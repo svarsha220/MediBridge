@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Organ Information</title>
+</head>
+<body>
+    <h1>Organ Donation Information</h1>
+    
+    <div>
+        <h3>Status: <span th:text="${donationStatus}">Donation Status</span></h3>
+        <h3>Request Status: <span th:text="${requestStatus}">Request Status</span></h3>
+    </div>
+    
+    <div>
+        <h3>Donated Organs:</h3>
+        <ul>
+            <li th:each="donation : ${donationList}">
+                <span th:text="${donation}"></span>
+            </li>
+        </ul>
+    </div>
+    
+    <a href="/logout">Logout</a>
+</body>
+</html>

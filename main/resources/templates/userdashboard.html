@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            text-align: center;
+            padding: 40px;
+        }
+        h2 {
+            color: #333;
+        }
+        .button-container {
+            margin: 20px 0;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            margin: 10px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .donation-section {
+            background-color: #fff;
+            margin: 30px auto;
+            padding: 20px;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #e9f7ef;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-left: 5px solid #4CAF50;
+            border-radius: 5px;
+        }
+        p {
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+<h2 th:text="'Welcome, ' + ${username}">Welcome, User</h2>
+
+<div class="button-container">
+    <a href="/donateorgan" class="btn">Donate Organ</a>
+    <a href="/requestorgan" class="btn">Request Organ</a>
+</div>
+
+<!-- Donations Section -->
+<div class="donation-section">
+    <h3>Your Donations</h3>
+    <div>
+        <p th:if="${donationList.empty}">No donations made yet.</p>
+        <ul th:if="${not donationList.empty}">
+            <li th:each="donation : ${donationList}"
+                th:text="'Organ: ' + ${donation.organName} + ', Donor: ' + ${donation.donorName} + ', Age: ' + ${donation.donorAge} + ', Blood Group: ' + ${donation.bloodGroup}">
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Requests Section -->
+<div class="donation-section">
+    <h3>Your Requests</h3>
+    <div>
+        <p th:if="${requestList.empty}">No requests made yet.</p>
+        <ul th:if="${not requestList.empty}">
+            <li th:each="request : ${requestList}"
+                th:text="'Organ: ' + ${request.organName} + ', Name: ' + ${request.requesterName} + ', Age: ' + ${request.requesterAge} + ', Blood Group: ' + ${request.bloodGroup}">
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
