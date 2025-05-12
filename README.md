@@ -39,11 +39,11 @@ This is a Java Spring Boot-based web application designed to simplify and stream
 
 ## output :
 
-![roll selection](![role_page](https://github.com/user-attachments/assets/4169d290-d6e1-4ea1-a91b-767421e1482d))
-![user login](![user_login](https://github.com/user-attachments/assets/7e1e0f94-41cf-4534-85b1-597f025a7d19))
-![Admin Dashboard](![admin_dashboard](https://github.com/user-attachments/assets/ed4f1c52-b2bb-4785-9129-34aa349813b2))
-![user Dashboard](![user_dashboard](https://github.com/user-attachments/assets/3e0290d3-27c1-464b-af7c-f31a63a94987))
-![Donation form](![form](https://github.com/user-attachments/assets/eb6bb6ff-9a21-4f9c-a584-84f66761fd73))
+![roll selection](https://github.com/user-attachments/assets/4169d290-d6e1-4ea1-a91b-767421e1482d)
+![user login](https://github.com/user-attachments/assets/7e1e0f94-41cf-4534-85b1-597f025a7d19)
+![Admin Dashboard](https://github.com/user-attachments/assets/ed4f1c52-b2bb-4785-9129-34aa349813b2)
+![user Dashboard](https://github.com/user-attachments/assets/3e0290d3-27c1-464b-af7c-f31a63a94987)
+![Donation form](https://github.com/user-attachments/assets/eb6bb6ff-9a21-4f9c-a584-84f66761fd73)
 
 
 
